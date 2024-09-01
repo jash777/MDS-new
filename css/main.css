@@ -50,7 +50,7 @@
 
 .navbutton {
   color: #fff;
-  background: #A2B3D4;
+  background: #000000;
   padding-right: 2.5rem;
   padding-left: 2.5rem;
   outline: 0;
@@ -58,7 +58,13 @@
   font-size: 1rem;
   white-space: nowrap;
   transition: opacity 1s ease-in;
+  text-decoration: no;
+}
 
+/* Hover effect for button */
+.navbutton:hover {
+  background-color: #A2B3D4; /* Change background color on hover */
+  color:#ffffff;
 }
 
 
@@ -117,17 +123,7 @@ a {
   gap: 2rem;
 }
 
-.navbutton {
-  color: #fff;
-  background: #A2B3D4;
-  padding-right: 2.5rem;
-  padding-left: 2.5rem;
-  outline: 0;
-  border: 0px;
-  font-size: 1rem;
-  white-space: nowrap;
-  transition: opacity 1s ease-in;
-}
+
 
 a {
   color: black;
