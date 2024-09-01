@@ -1,0 +1,54 @@
+.detailscontainer5 {
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 125px;
+    position: relative;
+    margin-top: -75px;
+  }
+  
+  .detailsbody5 {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    margin-right: 140px;
+    
+  }
+  
+  .detailsheader5 h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    position:relative;
+
+  }
+  .detaislistbody5{
+    position: absolute;
+    right: 179px;
+    top: 492px;
+  }
+  .detailsheader5 h2 {
+    line-height: 1.1;
+    margin: auto;
+    padding: 0;
+    position:relative;
+    bottom: -30px;
+    font-weight: 880;
+    left: 5px;
+  }
+  
+  .imagecontainer5 {
+    position: absolute;
+    left: 100px;
+    width: 50%;
+    height: 70%;
+    background-image: url('../assets/image5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 1;
+    max-width: 100%;
+    padding-bottom: 65px;
+    bottom: 2%;
+}

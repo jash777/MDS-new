@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+
+.cards {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    max-width: 46.5%;
+    margin-bottom: 250px;
+}
+
+
+.card {
+  margin-right: 15px;
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+  right: -1000px;
+  top: 90px;
+}
+
+.card 
+.card:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+}
+
+
+.teamheader h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 6.5rem;
+    line-height: 1.1;
+    position:absolute;
+    left: 175px;
+
+  }
+  
+  .teamheader h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 5.4rem;
+    line-height: 1.1;
+    position:absolute;
+    left: 185px;
+    top:295px;
+    color: black;
+
+  }
+  
+/* New styles for the button SVG */
+.button-svg {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    left: 205px;
+    top: 400px;
+}
+
+.button-svg:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2) saturate(1.2);
+}
+
+
+
+.button2-svg {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    left: 335px;
+    top: 299px;
+}
+
+.button2-svg:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2) saturate(1.2);
+}
+
+
+/* CSS Styles for Card Animation */
+@keyframes slideLeftFadeOut {
+  from {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  to {
+      opacity: 0;  /* Fully fade out */
+      transform: translateX(-100px);  /* Slide left by 100px */
+      -webkit-transform: translateX(calc(16px * -1));
+      transform: translateX(calc(16px * -1));
+      -webkit-transform: translateX(calc(var(--size-16) * -1));
+      transform: translateX(calc(var(--size-16) * -1))
+      
+  }
+}
+
+.slide-left {
+  animation: slideLeftFadeOut 0.6s forwards; /* slide and fade out */
+  position: relative; /* Maintain relative positioning for stacking */
+  z-index: 1; /* Ensure proper stacking order during animation */
+  
+}

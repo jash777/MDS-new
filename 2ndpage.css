@@ -1,0 +1,108 @@
+.detailscontainer {
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 125px;
+    position: relative;
+    margin-top: -75px;
+  }
+  
+  .detailsbody {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    
+  }
+  
+  .detailsheader h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    position:relative;
+
+  }
+  
+  .detailsheader h2 {
+    line-height: 1.1;
+    margin: auto;
+    padding: 0;
+    position:relative;
+    bottom: -30px;
+    font-weight: 880;
+    left: 8px;
+  }
+  
+  .details2container {
+    height: 50rem;
+    position:absolute;
+
+  }
+  
+  .details2body {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+  
+  .details2header h2 {
+    line-height: 1.2;
+  }
+  
+  .details2headermain {
+    padding-top: 1rem;
+    
+  }
+  
+  .details2header h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+    margin: auto;
+  }
+  
+  .details2content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* Add padding and margin as needed */
+  }
+  
+  .column {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid black;
+  }
+  
+  .column:first {
+    width: 40%;
+  }
+  
+  .column:nth-child(2) {
+    width: 60%;
+    background-color: black;
+    color: white;
+  }
+  
+  .progress {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333; /* Replace with your desired color */
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  

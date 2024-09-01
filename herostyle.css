@@ -1,0 +1,64 @@
+
+.herocontainer{
+    height: 42rem;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+  }
+
+  .herobody p {
+    margin-left: 9px;
+    position: absolute;
+    top: 325px;
+    font-size: 20px;
+    }
+    
+  .herobody{
+    padding-left: 11.5rem;
+    padding-right: 7rem;
+    height: 75%;
+    width: 100%;
+    padding-top: 14%;
+    max-width: 100%;
+  }
+  
+  .herobody h1 {
+    font-size: 5.45rem;
+    font-weight: 850;
+    line-height: 1.1;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: auto;
+    max-width: 100%;
+  } 
+  
+  .herobody .whybutton {
+    color: #fff;
+    background: #A2B3D4;
+    padding: 1rem;
+    outline: 0;
+    border: 0px;
+    font-size: 1rem;
+    text-wrap: no-wrap;
+    white-space: nowrap;
+    max-width: 100%;
+    margin-top: 25px;
+  }
+
+  .main-image-container {
+    position: absolute;
+    right: 0;
+    width: 70%;
+    height: 86%;
+    background-image: url('../assets/new-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 1;
+    max-width: 100%;
+    padding-left: 85px;
+    bottom: 105px;
+    left: 310px;
+}

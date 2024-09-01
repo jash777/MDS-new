@@ -1,0 +1,48 @@
+
+.details10container {
+    background-color: rgb(255, 255, 255);
+    height: 12rem;
+  }
+  
+  .details10body {
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .details10header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .letsgetstarted {
+    color: #111;
+    background: #A2B3D4;
+    padding: 1rem;
+    outline: 0;
+    border: 0px;
+    font-size: 1.2rem;
+  }
+  
+  .details11container {
+    background-color: #222;
+  }
+  
+  .details11body {
+    color: white;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+  }
+  
+  .contactlist {
+    list-style-type: none;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.484);
+  }  

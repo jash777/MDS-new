@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Road-like Scroll Animation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 300vh;
+            cursor: none;
+        }
+        .page {
+            height: 100vh;
+            position: relative;
+        }
+        .image-container {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            border: 2px solid #000;
+        }
+        #image1 { top: 50%; right: 50px; transform: translateY(-50%); }
+        #image2 { top: 150vh; left: 50px; transform: translateY(-50%); }
+        #image3 { top: 250vh; right: 50px; transform: translateY(-50%); }
+        .snake-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        #cursor {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: red;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div id="image1" class="image-container">
+        <img src="./image4.png" alt="Image 1">
+    </div>
+</div>
+<div class="page">
+    <div id="image2" class="image-container">
+        <img src="image5.png" alt="Image 2">
+    </div>
+</div>
+<div class="page">
+    <div id="image3" class="image-container">
+        <img src="image4.png" alt="Image 3">
+    </div>
+</div>
+    <svg class="snake-line">
+        <path id="snake-path" fill="none" stroke="gray" stroke-width="2"></path>
+    </svg>
+
+    <script>
+        const snakePath = document.getElementById('snake-path');
+        const images = document.querySelectorAll('.image-container');
+        const cursor = document.getElementById('cursor');
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+
+        let mouseX = 0, mouseY = 0;
+        let pathPoints = [];
+        const maxPoints = 200;
+
+        function lerp(start, end, t) {
+            return start * (1 - t) + end * t;
+        }
+
+        function getControlPoint(current, previous, next, reverse) {
+            const smoothing = 0.2;
+            const op = reverse ? previous : next;
+            const x = lerp(current[0], op[0], smoothing);
+            const y = lerp(current[1], op[1], smoothing);
+            return [x, y];
+        }
+
+        function updateCursorPosition(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.left = `${mouseX - 10}px`;
+            cursor.style.top = `${mouseY - 10}px`;
+        }
+
+        function updateSnakePath() {
+            const scrollY = window.scrollY;
+            pathPoints.push([mouseX, mouseY + scrollY]);
+            if (pathPoints.length > maxPoints) {
+                pathPoints.shift();
+            }
+
+            let pathData = `M ${pathPoints[0][0]} ${pathPoints[0][1]}`;
+            
+            for (let i = 1; i < pathPoints.length - 1; i++) {
+                const [x, y] = pathPoints[i];
+                const [cpx1, cpy1] = getControlPoint(pathPoints[i-1], pathPoints[i-2], pathPoints[i], false);
+                const [cpx2, cpy2] = getControlPoint(pathPoints[i], pathPoints[i-1], pathPoints[i+1], true);
+                pathData += ` C ${cpx1},${cpy1} ${cpx2},${cpy2} ${x},${y}`;
+            }
+
+            snakePath.setAttribute('d', pathData);
+            
+            const pathLength = snakePath.getTotalLength();
+            snakePath.style.strokeDasharray = pathLength;
+            snakePath.style.strokeDashoffset = 0;
+
+            requestAnimationFrame(updateSnakePath);
+        }
+
+        window.addEventListener('mousemove', updateCursorPosition);
+        window.addEventListener('scroll', () => {
+            pathPoints = pathPoints.map(point => [point[0], point[1] - window.scrollY]);
+        });
+
+        updateSnakePath();
+    </script>
+</body>
+</html>
