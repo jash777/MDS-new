@@ -79,3 +79,29 @@ document.querySelectorAll('a').forEach(link => {
         gsap.to(link, {color: 'black', duration: 0.3});
     });
 });
+
+
+
+// the button after scrolling down 100px
+    // the button after scrolling down 100px
+    window.onscroll = function() {
+        toggleBackToTopButton();
+    };
+    
+    function toggleBackToTopButton() {
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    }
+    
+    // Scroll back to top smoothly
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    

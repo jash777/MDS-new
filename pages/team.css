@@ -115,8 +115,8 @@
 .teamimg{
   position: absolute;
   right: 0;
-  width: 70%;
-  height: 86%;
+  width: 85%;
+  height: 99%;
   background-image: url('../assets/team1bg.svg');
   background-size: cover;
   background-position: center;
@@ -125,8 +125,8 @@
   z-index: 1;
   max-width: 100%;
   padding-left: 85px;
-  bottom: 105px;
-  left: 310px;
+  bottom: 115px;
+  left: 200px;
 }
 
 .teamcontainer{
@@ -156,39 +156,13 @@ font-family: 'Open Sans', sans-serif;
   font-size: 30px;
 }
 
-/* 
-.teambody2 h2{
-  font-size: 44px;
-  font-weight: 800;
-  bottom: 205px;
-  margin-left: 294px;
-  margin-bottom: -155px;
-}
-
-.teambody2 {
-  margin-top: 30%;
-  margin-left: 40%;
-
-}
-
-.teambody2 p {
-  text-align: justify;
-  position: absolute;
-  left: 65%;
-  
-}
-
-.teamcontainer2 {
-left: -45%;  
-} */
-
 
 .teamcontainer2 {
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  margin-top: 25%;
+  margin-top: 30%;
   margin-left: 55%;
 }
 
@@ -197,19 +171,22 @@ left: -45%;
   padding: 2rem;
   background-color: transparent;
   border-radius: 8px;
+  margin-bottom: 35%;
 }
 
 .teambody2 h2 {
-  font-size: 2.5rem;
+  font-size: 3.2rem;
   color: #333;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   /* border-bottom: 1px solid#A2B3D4; */
   padding-bottom: 0.5rem;
+  margin-left: -9px;
+  font-weight: 900;
 }
 
 .teambody2 p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.4rem;
+  line-height: 1.45;
   color: #555;
   margin-bottom: 1rem;
   text-align: justify;
@@ -218,14 +195,12 @@ left: -45%;
 
 }
 
-.teamimg2 {
-  flex: 1;
-  background-image: url('path/to/your/image.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  margin-left: 2rem;
+.teamimage2 {
+  margin-left: 12%;
+  margin-top: -35.4%;
+
 }
+
 
 @media (max-width: 768px) {
   .teamcontainer2 {
@@ -236,5 +211,271 @@ left: -45%;
     height: 300px;
     margin-left: 0;
     margin-top: 2rem;
+  }
+}
+
+
+
+
+
+
+.teamcontainer3 {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 5%;
+  margin-left: 2%;
+}
+
+.teambody3 {
+  flex: 1;
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 8px;
+  margin-bottom: 35%;
+}
+
+.teambody3 h2 {
+  font-size: 3.2rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  /* border-bottom: 1px solid#A2B3D4; */
+  padding-bottom: 0.5rem;
+  margin-left: 5px;
+  font-weight: 900;
+}
+
+.teambody3 p {
+  font-size: 1.4rem;
+  line-height: 1.45;
+  color: #555;
+  margin-bottom: 1rem;
+  text-align: justify;
+  hyphens: auto;
+  margin-right: 32%;
+
+}
+.teamimg3{
+position: absolute;
+left: 50%;
+top: 197%;
+
+}
+
+
+
+
+.teamcontainer4 {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: -19%;
+  margin-left: 55%;
+  margin-bottom: -2%;
+}
+
+.teambody4 {
+  flex: 1;
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 8px;
+  margin-bottom: 35%;
+}
+
+.teambody4 h2 {
+  font-size: 1.7rem;
+  color: #000000;
+  /* border-bottom: 1px solid#A2B3D4; */
+  margin-left: -7px;
+  font-weight: 900;
+  margin-bottom: -3%;
+}
+
+.teambody4 h1 {
+  font-size: 3.2rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  /* border-bottom: 1px solid#A2B3D4; */
+  margin-left: -9px;
+  font-weight: 900;
+  line-height: 125%;
+}
+
+
+.teambody4 p {
+  font-size: 1.4rem;
+  line-height: 1.45;
+  color: #555;
+  margin-bottom: 1rem;
+  text-align: justify;
+  hyphens: auto;
+  margin-right: 5%;
+
+}
+
+.teamimage4 {
+  margin-left: 8%;
+  /* margin-top: -70.4%; */
+  width: 28%;
+  position:absolute;
+  bottom: -192%;
+
+}
+
+
+
+
+
+.cards {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  max-width: 46.5%;
+  margin-bottom: 250px;
+}
+
+
+.card {
+margin-right: 15px;
+transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+background-color: #fff;
+width: 100%;
+position: relative;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+right: -1000px;
+top: 90px;
+}
+
+.card 
+.card:hover {
+box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+  transform: scale(1.10, 1.10);
+}
+
+
+.teamheader h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 6.5rem;
+  line-height: 1.1;
+  position:absolute;
+  left: 175px;
+
+}
+
+.teamheader h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 5.4rem;
+  line-height: 1.1;
+  position:absolute;
+  left: 180px;
+  top:329%;
+  color: black;
+
+}
+
+/* New styles for the button SVG */
+.button-svg {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  left: 205px;
+  top: 400px;
+}
+
+.button-svg:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) saturate(1.2);
+}
+
+
+
+.button2-svg {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  left: 335px;
+  top: 313px;
+}
+
+.button2-svg:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) saturate(1.2);
+}
+
+
+/* CSS Styles for Card Animation */
+@keyframes slideLeftFadeOut {
+from {
+    opacity: 1;
+    transform: translateX(0);
+}
+to {
+    opacity: 0;  /* Fully fade out */
+    transform: translateX(-100px);  /* Slide left by 100px */
+    -webkit-transform: translateX(calc(16px * -1));
+    transform: translateX(calc(16px * -1));
+    -webkit-transform: translateX(calc(var(--size-16) * -1));
+    transform: translateX(calc(var(--size-16) * -1))
+    
+}
+}
+
+.slide-left {
+animation: slideLeftFadeOut 0.6s forwards; /* slide and fade out */
+position: relative; /* Maintain relative positioning for stacking */
+z-index: 1; /* Ensure proper stacking order during animation */
+
+}
+
+
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#back-to-top img {
+  width: 24px;
+  height: 24px;
+}
+
+#back-to-top:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  #back-to-top {
+      width: 40px;
+      height: 40px;
+  }
+
+  #back-to-top img {
+      width: 20px;
+      height: 20px;
   }
 }

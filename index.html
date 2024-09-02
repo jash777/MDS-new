@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="maincontainer">
+
                 <!---------------      Navbar Section start             -->
 
         <div class="navcontainer">
@@ -26,6 +27,7 @@
                 </div>
             </div>
         </div>
+
                  <!---------------      Navbar Section ends             -->
 
 
@@ -213,5 +215,37 @@
                 </div>
             </div>
 
+
+            <!--  Back top button -->
+            
+            <!-- Back to Top Button with PNG image -->
+            <button id="backToTopBtn" onclick="scrollToTop()">
+                <img src="../assets/up-arrow_4495549.png" alt="Back to Top">
+            </button>
+            
+            <div class="content"> </div>
+            <!--  Back top button -->
+<script> 
+     window.onscroll = function() {
+            toggleBackToTopButton();
+        };
+
+        function toggleBackToTopButton() {
+            const backToTopBtn = document.getElementById("backToTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+
+        // Scroll back to top smoothly
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+</script>
 </body>
 </html>
