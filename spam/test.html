@@ -3,77 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back to Top Button</title>
+    <title>Enhanced Two-Card Team Slider</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            height: 100vh;
+            display: flex;
         }
 
-        .content {
+        /* Left Section */
+        .left-section {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            background-color: #f4f4f4;
-            height: 2000px; /* Simulate long content for scrolling */
         }
 
-        #backToTopBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none; /* Initially hidden */
-            background-color: transparent;
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button-svg {
+            background: none;
             border: none;
-            padding: 0;
             cursor: pointer;
-            z-index: 1000;
+            padding: 10px;
         }
 
-        #backToTopBtn img {
-            width: 50px;  /* Adjust the size of the button */
-            height: 50px; /* Adjust the size of the button */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 50%;
-            background-color: #007BFF; /* Background color for the button */
+        .button-svg img {
+            width: 40px;
+            height: auto;
         }
 
-        #backToTopBtn:hover img {
-            background-color: #0056b3; /* Change color on hover */
+        /* Right Section - Cards */
+        .right-section {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .cards-container {
+            width: 440px; /* Width of two cards + gap */
+            height: 315px; /* Height of a card */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            transition: transform 0.5s ease;
+        }
+
+        .card {
+            flex: 0 0 210px;
+            height: 315px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* Enhanced Animation Classes */
+        .card.fade-out {
+            opacity: 0;
+            transform: scale(0.8) translateX(20%);
+            z-index: -1;
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <!-- Simulate long content -->
-    </div>
+    <section class="left-section">
+        <div class="teamheader">  <h1>OUR TEAM<br>PLAYERS</h1></div>
+        <h1>OUR TEAM<br>PLAYERS</h1>
+        <div class="controls">
+            <button id="prev-button" class="button-svg">
+                <img src="../assets/new-button.svg" alt="Previous">
+            </button>
+            <button id="next-button" class="button-svg">
+                <img src="../assets/newbutton2.svg" alt="Next">
+            </button>
+        </div>
+    </section>
 
-    <!-- Back to Top Button with PNG image -->
-    <button id="backToTopBtn" onclick="scrollToTop()">
-        <img src="../assets/up-arrow_4495549.png" alt="Back to Top">
-    </button>
+    <section class="right-section">
+        <div class="cards-container">
+            <div class="cards">
+                <article class="card">
+                    <img src="../assets/team1.jpg" alt="Team Member 1">
+                </article>
+                <article class="card">
+                    <img src="../assets/team1.jpg" alt="Team Member 2">
+                </article>
+                <article class="card">
+                    <img src="../assets/team1.jpg"alt="Team Member 3">
+                </article>
+                <article class="card">
+                    <img src="../assets/team1.jpg" alt="Team Member 4">
+                </article>
+                <article class="card">
+                    <img src="../assets/team1.jpg" alt="Team Member 5">
+                </article>
+            </div>
+        </div>
+    </section>
 
     <script>
-        // Show the button after scrolling down 100px
-        window.onscroll = function() {
-            toggleBackToTopButton();
-        };
+        let currentCardIndex = 0;
+        const cards = document.querySelectorAll('.card');
+        const cardsContainer = document.querySelector('.cards');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
 
-        function toggleBackToTopButton() {
-            const backToTopBtn = document.getElementById("backToTopBtn");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
+        function updateCards() {
+            cardsContainer.style.transform = `translateX(-${currentCardIndex * 230}px)`;
+        }
+
+        function slideCards(direction) {
+            if (direction === 'next' && currentCardIndex < cards.length - 2) {
+                cards[currentCardIndex].classList.add('fade-out');
+                setTimeout(() => {
+                    currentCardIndex++;
+                    updateCards();
+                    setTimeout(() => {
+                        cards[currentCardIndex - 1].classList.remove('fade-out');
+                    }, 500);
+                }, 500);
+            } else if (direction === 'prev' && currentCardIndex > 0) {
+                currentCardIndex--;
+                updateCards();
+                setTimeout(() => {
+                    cards[currentCardIndex].classList.remove('fade-out');
+                }, 50);
             }
         }
 
-        // Scroll back to top smoothly
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
+        nextButton.addEventListener('click', () => slideCards('next'));
+        prevButton.addEventListener('click', () => slideCards('prev'));
+
+        // Initial setup
+        updateCards();
     </script>
 </body>
 </html>

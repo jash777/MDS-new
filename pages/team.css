@@ -3,36 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
 
-.cards {
-    width: 100%;
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center;
-    -webkit-justify-content: center;
-    max-width: 46.5%;
-    margin-bottom: 250px;
-}
-
-
-.card {
-  margin-right: 15px;
-  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
-  background-color: #fff;
-  width: 100%;
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
-  right: -1000px;
-  top: 90px;
-}
-
-.card 
-.card:hover {
-  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-    transform: scale(1.10, 1.10);
-}
-
 
 .teamheader h1 {
     font-family: 'Open Sans', sans-serif;
@@ -40,6 +10,7 @@
     line-height: 1.1;
     position:absolute;
     left: 175px;
+    top: 15px;
 
   }
   
@@ -54,63 +25,7 @@
 
   }
   
-/* New styles for the button SVG */
-.button-svg {
-    width: 100px; /* Adjust as needed */
-    height: auto;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    left: 205px;
-    top: 400px;
-}
-
-.button-svg:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2) saturate(1.2);
-}
-
-
-
-.button2-svg {
-    width: 100px; /* Adjust as needed */
-    height: auto;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    left: 335px;
-    top: 299px;
-}
-
-.button2-svg:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2) saturate(1.2);
-}
-
-
-/* CSS Styles for Card Animation */
-@keyframes slideLeftFadeOut {
-  from {
-      opacity: 1;
-      transform: translateX(0);
-  }
-  to {
-      opacity: 0;  /* Fully fade out */
-      transform: translateX(-100px);  /* Slide left by 100px */
-      -webkit-transform: translateX(calc(16px * -1));
-      transform: translateX(calc(16px * -1));
-      -webkit-transform: translateX(calc(var(--size-16) * -1));
-      transform: translateX(calc(var(--size-16) * -1))
-      
-  }
-}
-
-.slide-left {
-  animation: slideLeftFadeOut 0.6s forwards; /* slide and fade out */
-  position: relative; /* Maintain relative positioning for stacking */
-  z-index: 1; /* Ensure proper stacking order during animation */
   
-}
 
 .teamimg{
   position: absolute;
@@ -215,10 +130,6 @@ font-family: 'Open Sans', sans-serif;
 }
 
 
-
-
-
-
 .teamcontainer3 {
   display: flex;
   max-width: 1200px;
@@ -262,9 +173,6 @@ left: 50%;
 top: 197%;
 
 }
-
-
-
 
 .teamcontainer4 {
   display: flex;
@@ -323,159 +231,127 @@ top: 197%;
   bottom: -192%;
 
 }
-
-
-
-
-
-.cards {
-  width: 100%;
-  display: flex;
-  display: -webkit-flex;
-  justify-content: center;
-  -webkit-justify-content: center;
-  max-width: 46.5%;
-  margin-bottom: 250px;
-}
-
-
-.card {
-margin-right: 15px;
-transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
-background-color: #fff;
-width: 100%;
-position: relative;
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
-right: -1000px;
-top: 90px;
-}
-
-.card 
-.card:hover {
-box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-  transform: scale(1.10, 1.10);
-}
-
-
-.teamheader h1 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 6.5rem;
-  line-height: 1.1;
-  position:absolute;
-  left: 175px;
-
-}
-
-.teamheader h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 5.4rem;
-  line-height: 1.1;
-  position:absolute;
-  left: 180px;
-  top:329%;
-  color: black;
-
-}
-
-/* New styles for the button SVG */
-.button-svg {
-  width: 100px; /* Adjust as needed */
-  height: auto;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.TeamA {
   position: relative;
-  left: 205px;
-  top: 400px;
+  margin-top: -10%;
+  margin-bottom: 10%;
 }
 
-.button-svg:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2) saturate(1.2);
+        /* Left Section */
+        .left-section {
+          width: 40%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+      }
+
+
+      .controls {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+      }
+
+      .button-svg1 {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 10px;
+          position: absolute;
+          
+      }
+      .button-svg1{
+        left: 12%;
+        top: 75%
+      }
+
+      .button-svg2{
+        left: 20%;
+        top: 75%
+      }
+      .button-svg1 img {
+          width: 100px;
+          height: auto;
+          
+      }
+
+      .button-svg2 {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        
+    }
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
 }
 
-
-
-.button2-svg {
-  width: 100px; /* Adjust as needed */
-  height: auto;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  left: 335px;
-  top: 313px;
+.button-svg1:active {
+    animation: bounce 1s ease-in-out;
 }
 
-.button2-svg:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2) saturate(1.2);
+.button-svg2:active {
+  animation: bounce 1s ease-in-out;
 }
 
+    .button-svg2 img {
+        width: 100px;
+        height: auto;
+        
+    }
 
-/* CSS Styles for Card Animation */
-@keyframes slideLeftFadeOut {
-from {
-    opacity: 1;
-    transform: translateX(0);
-}
-to {
-    opacity: 0;  /* Fully fade out */
-    transform: translateX(-100px);  /* Slide left by 100px */
-    -webkit-transform: translateX(calc(16px * -1));
-    transform: translateX(calc(16px * -1));
-    -webkit-transform: translateX(calc(var(--size-16) * -1));
-    transform: translateX(calc(var(--size-16) * -1))
-    
-}
-}
+      /* Right Section - Cards */
+      .right-section {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          margin-left: 290%;
+      }
 
-.slide-left {
-animation: slideLeftFadeOut 0.6s forwards; /* slide and fade out */
-position: relative; /* Maintain relative positioning for stacking */
-z-index: 1; /* Ensure proper stacking order during animation */
+      .cards-container {
+          width: 720px; /* Width of two larger cards + gap */
+          height: 490px; /* Height of a larger card */
+          position: relative;
+          overflow: hidden;
+      }
 
-}
+      .cards {
+          display: flex;
+          gap: 30px;
+          position: absolute;
+          transition: transform 0.5s ease;
+      }
 
+      .card {
+          flex: 0 0 345px; /* Increased width */
+          height: 490px; /* Increased height */
+          background-color: #fff;
+          border-radius: 16px;
+          box-shadow: 0px 15px 12px -7px rgba(0, 0, 0, 0.1);
+          transition: all 0.5s ease;
+          position: relative;
+      }
 
-/* Back to Top Button */
-#back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s, transform 0.3s;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+      .card img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 16px;
+      }
 
-#back-to-top img {
-  width: 24px;
-  height: 24px;
-}
-
-#back-to-top:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-3px);
-}
-
-@media (max-width: 768px) {
-  #back-to-top {
-      width: 40px;
-      height: 40px;
-  }
-
-  #back-to-top img {
-      width: 20px;
-      height: 20px;
-  }
-}
+      /* Enhanced Animation Classes */
+      .card.fade-out {
+          opacity: 0;
+          transform: scale(0.8) translateX(20%);
+          z-index: -1;
+      }

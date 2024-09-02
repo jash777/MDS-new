@@ -105,27 +105,52 @@
                                                                                             
                                                                                         </div>                                <div class="teamimage4"> <img src="../assets/team4img.png"></div>
                                                         
-                                                                                        <!---------------      team4 Section startss             -->
+                                                                                        <!---------------      team4 Section starts             -->
 
-                                                                                        <!---------------      team5 Section startss             -->
-                                                                                        <section class="cards">
-                                                                                            <div class="teamheader">
-                                                                                                <h1>OUR TEAM</h1>
-                                                                                                <h2>PLAYERS</h2>
+                                                                                        <!---------------      team5 Section starts             -->
+                                                                                        <div class="TeamA">
+                                                                                        <section class="left-section">
+                                                                                            <section class="left-section">
+                                                                                                <div class="teamheader">  <h1>OUR TEAM<br>PLAYERS</h1></div>                                                                                            <div class="controls">
+                                                                                                <button id="prev-button" class="button-svg1">
+                                                                                                    <img src="../assets/new-button.svg" alt="Previous">
+                                                                                                </button>
+                                                                                                <button id="next-button" class="button-svg2">
+                                                                                                    <img src="../assets/newbutton2.svg" alt="Next">
+                                                                                                </button>
                                                                                             </div>
-                                                                                            <div class="buttons">
-                                                                                                <img id="prev-button" class="button-svg" src="../assets/new-button.svg" alt="Previous" onclick="slideCardLeft('prev')">
-                                                                                                <img id="next-button" class="button2-svg" src="../assets/newbutton2.svg" alt="Next" onclick="slideCardLeft('next')">
+                                                                                        </section>
+                                                                                    
+                                                                                        <section class="right-section">
+                                                                                            <div class="cards-container">
+                                                                                                <div class="cards">
+                                                                                                    <article class="card">
+                                                                                                        <img src="../assets/team1.jpg" alt="Team Member 1">
+                                                                                                    </article>
+                                                                                                    <article class="card">
+                                                                                                        <img src="../assets/team2.jpg" alt="Team Member 2">
+                                                                                                    </article>
+                                                                                                    <article class="card">
+                                                                                                        <img src="../assets/team3.jpg"alt="Team Member 3">
+                                                                                                    </article>
+                                                                                                    <article class="card">
+                                                                                                        <img src="../assets/team4.jpg" alt="Team Member 4">
+                                                                                                    </article>
+                                                                                                    <article class="card">
+                                                                                                        <img src="../assets/team5.jpg" alt="Team Member 5">
+                                                                                                    </article>
+                                                                                                    <article class="card">
+                                                                                                        <img src="../assets/team6.jpg" alt="Team Member 5">
+                                                                                                    </article>
+                                                                                                    <article class="card">
+                                                                                                        <img src="../assets/team8.jpg" alt="Team Member 5">
+                                                                                                    </article>
+                                                                                                </div>
                                                                                             </div>
-                                                                                        
-                                                                                            <article class="card card1">
-                                                                                                <img src="../assets/team1.jpg" alt="Team Member 1">
-                                                                                            </article>
-                                                                                              
-                                                                                            <article class="card card2">
-                                                                                                <img src="../assets/team2.jpg" alt="Team Member 2">
-                                                                                            </article>  
-                                                                                        </section>                                                                                       
+                                                                                        </section>
+                                                                                    </div>
+                                                                                                                                                                                <!---------------      team5 Section ends             -->
+                                                                                 
 </div>
 
 <div class="details11container">
@@ -193,7 +218,7 @@
 
 <!-- Back to Top Button with PNG image -->
 <button id="backToTopBtn" onclick="scrollToTop()">
-    <img src="../assets/up-arrow_4495549.png" alt="Back to Top">
+    <img src="../assets/uparrow.svg" alt="Back to Top">
 </button>
 
 <!--  Back to top button -->
@@ -220,5 +245,68 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+const backToTopBtn = document.getElementById('backToTopBtn');
 
+function toggleButtonVisibility() {
+  if (window.pageYOffset > 300) {
+    if (!backToTopBtn.classList.contains('show')) {
+      backToTopBtn.classList.add('show');
+      setTimeout(() => {
+        backToTopBtn.classList.add('fade-in');
+      }, 10);
+    }
+  } else {
+    backToTopBtn.classList.remove('fade-in');
+    backToTopBtn.classList.add('fade-out');
+    setTimeout(() => {
+      backToTopBtn.classList.remove('show', 'fade-out');
+    }, 300);
+  }
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+window.addEventListener('scroll', toggleButtonVisibility);
+backToTopBtn.addEventListener('click', scrollToTop);
+
+
+let currentCardIndex = 0;
+        const cards = document.querySelectorAll('.card');
+        const cardsContainer = document.querySelector('.cards');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+
+        function updateCards() {
+            cardsContainer.style.transform = `translateX(-${currentCardIndex * 375}px)`; // 345px (card width) + 30px (gap)
+        }
+
+        function slideCards(direction) {
+            if (direction === 'next' && currentCardIndex < cards.length - 2) {
+                cards[currentCardIndex].classList.add('fade-out');
+                setTimeout(() => {
+                    currentCardIndex++;
+                    updateCards();
+                    setTimeout(() => {
+                        cards[currentCardIndex - 1].classList.remove('fade-out');
+                    }, 600);
+                }, 500);
+            } else if (direction === 'prev' && currentCardIndex > 0) {
+                currentCardIndex--;
+                updateCards();
+                setTimeout(() => {
+                    cards[currentCardIndex].classList.remove('fade-out');
+                }, 50);
+            }
+        }
+
+        nextButton.addEventListener('click', () => slideCards('next'));
+        prevButton.addEventListener('click', () => slideCards('prev'));
+
+        // Initial setup
+        updateCards();
 </script>

@@ -105,3 +105,32 @@ document.querySelectorAll('a').forEach(link => {
         });
     }
     
+
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+function toggleButtonVisibility() {
+  if (window.pageYOffset > 300) {
+    if (!backToTopBtn.classList.contains('show')) {
+      backToTopBtn.classList.add('show');
+      setTimeout(() => {
+        backToTopBtn.classList.add('fade-in');
+      }, 10);
+    }
+  } else {
+    backToTopBtn.classList.remove('fade-in');
+    backToTopBtn.classList.add('fade-out');
+    setTimeout(() => {
+      backToTopBtn.classList.remove('show', 'fade-out');
+    }, 300);
+  }
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+window.addEventListener('scroll', toggleButtonVisibility);
+backToTopBtn.addEventListener('click', scrollToTop);

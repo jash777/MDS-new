@@ -18,11 +18,13 @@
                 </div>
                 <div class="navright">
                     <ul class="navitems">
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="technologies.html">Technologies</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Technologies</a></li>
                         <li><a href="./pages/team.html">Team</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">About</a></li>
                     </ul>
+
+                    
                     <button class="navbutton" onclick="location.href='contact.html';">Contact Us</button>
                 </div>
             </div>
@@ -220,7 +222,7 @@
             
             <!-- Back to Top Button with PNG image -->
             <button id="backToTopBtn" onclick="scrollToTop()">
-                <img src="../assets/up-arrow_4495549.png" alt="Back to Top">
+                <img src="../assets/uparrow.svg" alt="Back to Top">
             </button>
             
             <div class="content"> </div>
@@ -246,6 +248,53 @@
                 behavior: 'smooth'
             });
         }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navRight = document.querySelector('.navright');
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    navRight.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('.navitems a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navRight.classList.remove('active');
+    });
+  });
+});
+const backToTopBtn = document.getElementById('backToTopBtn');
+
+function toggleButtonVisibility() {
+  if (window.pageYOffset > 300) {
+    if (!backToTopBtn.classList.contains('show')) {
+      backToTopBtn.classList.add('show');
+      setTimeout(() => {
+        backToTopBtn.classList.add('fade-in');
+      }, 10);
+    }
+  } else {
+    backToTopBtn.classList.remove('fade-in');
+    backToTopBtn.classList.add('fade-out');
+    setTimeout(() => {
+      backToTopBtn.classList.remove('show', 'fade-out');
+    }, 300);
+  }
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+window.addEventListener('scroll', toggleButtonVisibility);
+backToTopBtn.addEventListener('click', scrollToTop);
 </script>
 </body>
 </html>
